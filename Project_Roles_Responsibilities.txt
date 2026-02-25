@@ -1,0 +1,100 @@
+Team Breakdown (6 People)
+👤 Person 1 — Frontend Lead (UI & UX)
+Focus: User-facing pages and layout
+Responsibilities
+Build React UI components
+Page routing and layout
+User experience consistency
+Files / Areas
+frontend/src/pages/
+frontend/src/components/
+frontend/src/styles/
+What to Start With
+Home page (Home.jsx)
+Product listing page (ProductList.jsx)
+Product card component (ProductCard.jsx)
+Basic site navigation (Navbar.jsx)
+
+👤 Person 2 — Authentication & User Management
+Focus: Login, registration, user roles
+Responsibilities
+User signup/login
+JWT authentication
+Role-based access (user vs admin)
+Files / Areas
+backend/src/routes/authRoutes.js
+backend/src/controllers/authController.js
+backend/src/models/User.js
+frontend/src/pages/Login.jsx
+frontend/src/pages/Register.jsx
+What to Start With
+User database schema
+Register + login API endpoints
+Frontend login/register forms
+
+👤 Person 3 — Product & Admin Management
+Focus: Product catalog + admin controls
+Responsibilities
+Product CRUD (Create, Read, Update, Delete)
+Admin dashboard logic
+Inventory management
+Files / Areas
+backend/src/models/Product.js
+backend/src/routes/productRoutes.js
+backend/src/controllers/productController.js
+frontend/src/pages/AdminDashboard.jsx
+What to Start With
+Product schema
+Product API endpoints
+Admin-only routes
+
+👤 Person 4 — Shopping Cart & Order Management
+Focus: Core e-commerce functionality
+Responsibilities
+Shopping cart logic
+Order creation and history
+Checkout flow (pre-payment)
+Files / Areas
+frontend/src/context/CartContext.js
+frontend/src/pages/Cart.jsx
+frontend/src/pages/Checkout.jsx
+backend/src/models/Order.js
+backend/src/routes/orderRoutes.js
+What to Start With
+Cart state management (add/remove/update items)
+Backend order schema
+Order creation endpoint
+
+👤 Person 5 — Payments, Reviews & Ratings
+Focus: Monetization + user feedback
+Responsibilities
+Stripe payment integration
+Product reviews and ratings
+Payment success/failure handling
+Files / Areas
+backend/src/routes/paymentRoutes.js
+backend/src/controllers/paymentController.js
+backend/src/models/Review.js
+frontend/src/pages/PaymentSuccess.jsx
+What to Start With
+Stripe test environment setup
+Payment intent API
+Review submission and display logic
+
+👤 Person 6 — DevOps, Database & Security
+Focus: Infrastructure, reliability, security (this one screams your strengths 💪)
+Responsibilities
+Database design (PostgreSQL)
+Environment configuration
+Security best practices
+Deployment (AWS)
+Files / Areas
+backend/.env
+backend/src/config/db.js
+docker-compose.yml (optional)
+AWS EC2 / RDS configs
+What to Start With
+Database schema planning
+Secure environment variables
+CI/CD pipeline (GitHub Actions)
+Cloud deployment setup
