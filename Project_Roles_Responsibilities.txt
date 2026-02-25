@@ -82,7 +82,7 @@ Payment intent API
 Review submission and display logic
 
 👤 Person 6 — DevOps, Database & Security
-Focus: Infrastructure, reliability, security (this one screams your strengths 💪)
+Focus: Infrastructure, reliability, security
 Responsibilities
 Database design (PostgreSQL)
 Environment configuration
