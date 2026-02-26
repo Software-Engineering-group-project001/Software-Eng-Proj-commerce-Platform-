@@ -1,5 +1,5 @@
 Team Breakdown (6 People)
-👤 Person 1 — Frontend Lead (UI & UX)
+👤 Marvin Ampofo — Frontend Lead (UI & UX)
 Focus: User-facing pages and layout
 Responsibilities
 Build React UI components
