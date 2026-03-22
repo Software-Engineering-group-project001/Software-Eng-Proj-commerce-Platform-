@@ -15,7 +15,7 @@ Product listing page (ProductList.jsx)
 Product card component (ProductCard.jsx)
 Basic site navigation (Navbar.jsx)
 
-👤 Person 2 — Authentication & User Management
+👤 Love Nepali— Authentication & User Management
 Focus: Login, registration, user roles
 Responsibilities
 User signup/login
