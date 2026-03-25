@@ -48,7 +48,7 @@ Product schema
 Product API endpoints
 Admin-only routes
 
-👤 Person 4 — Shopping Cart & Order Management
+👤 Felistus Karanja — Shopping Cart & Order Management
 Focus: Core e-commerce functionality
 Responsibilities
 Shopping cart logic
