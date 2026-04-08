@@ -32,7 +32,7 @@ User database schema
 Register + login API endpoints
 Frontend login/register forms
 
-👤 Person 3 — Product & Admin Management
+👤 Peace Enweriku — Product & Admin Management
 Focus: Product catalog + admin controls
 Responsibilities
 Product CRUD (Create, Read, Update, Delete)
