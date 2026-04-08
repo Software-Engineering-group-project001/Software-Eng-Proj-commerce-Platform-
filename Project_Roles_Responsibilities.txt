@@ -81,7 +81,7 @@ Stripe test environment setup
 Payment intent API
 Review submission and display logic
 
-👤 Person 6 — DevOps, Database & Security
+👤 Francis Mordi — DevOps, Database & Security
 Focus: Infrastructure, reliability, security
 Responsibilities
 Database design (PostgreSQL)
