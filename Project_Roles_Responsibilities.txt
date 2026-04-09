@@ -65,7 +65,7 @@ Cart state management (add/remove/update items)
 Backend order schema
 Order creation endpoint
 
-👤 Person 5 — Payments, Reviews & Ratings
+👤 Bryan Bassi — Payments, Reviews & Ratings
 Focus: Monetization + user feedback
 Responsibilities
 Stripe payment integration
