@@ -1,0 +1,26 @@
+/* This makes the AI icon stay in one spot on the screen */
+.ai-float {
+  position: fixed;   
+  bottom: 30px;      
+  right: 30px;       
+  z-index: 9999;     
+  
+  background-color: white; /* Give it a background so it's visible */
+  color: #4b54ff;          /* Bootstrap Blue */
+  padding: 12px;
+  border-radius: 50%;      /* Makes it a perfect circle */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;   
+  transition: transform 0.2s ease-in-out;
+}
+
+.ai-float:hover {
+  transform: scale(1.1);   
+  color: #0056b3;
+
+}
+
