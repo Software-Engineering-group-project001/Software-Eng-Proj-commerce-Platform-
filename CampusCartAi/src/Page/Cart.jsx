@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import { MdDelete } from "react-icons/md"; // Import a delete icon
+import { MdDelete } from "react-icons/md"; 
 
 const Cart = () => {
   const { cart, removeFromCart } = useOutletContext();
