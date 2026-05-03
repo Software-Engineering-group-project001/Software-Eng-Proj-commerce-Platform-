@@ -26,10 +26,10 @@ const getAllProducts = async () => {
   return result.rows;
 };
 
-// Get a single product by ID
+// Get a single active product by ID (inactive/deleted products are excluded)
 const getProductById = async (id) => {
   const result = await pool.query(
-    'SELECT * FROM products WHERE id = $1', [id]
+    'SELECT * FROM products WHERE id = $1 AND is_active = true', [id]
   );
   return result.rows[0];
 };
@@ -44,12 +44,43 @@ const createProduct = async ({ name, description, price, image_url, category, st
   return result.rows[0];
 };
 
-// Update a product
+// Update a product — only overwrites fields that were actually sent.
+// COALESCE($1, column) means: use the new value if provided, otherwise keep the existing one.
+// This prevents a partial update (e.g. only changing price) from wiping other fields to null.
 const updateProduct = async (id, { name, description, price, image_url, category, stock_quantity }) => {
   const result = await pool.query(
-    `UPDATE products SET name=$1, description=$2, price=$3, image_url=$4,
-     category=$5, stock_quantity=$6 WHERE id=$7 RETURNING *`,
+    `UPDATE products
+     SET name           = COALESCE($1, name),
+         description    = COALESCE($2, description),
+         price          = COALESCE($3, price),
+         image_url      = COALESCE($4, image_url),
+         category       = COALESCE($5, category),
+         stock_quantity = COALESCE($6, stock_quantity)
+     WHERE id = $7
+     RETURNING *`,
     [name, description, price, image_url, category, stock_quantity, id]
+  );
+  return result.rows[0];
+};
+
+// Get ALL products including inactive ones — admin dashboard only
+const getAllProductsAdmin = async () => {
+  const result = await pool.query(
+    'SELECT * FROM products ORDER BY created_at DESC'
+  );
+  return result.rows;
+};
+
+// Adjust stock quantity by a delta (positive = restock, negative = purchase deduction)
+// Using delta instead of a direct SET prevents race conditions when two orders
+// come in at the same time — both reads a value and one overwrites the other.
+const adjustStock = async (id, delta) => {
+  const result = await pool.query(
+    `UPDATE products
+     SET stock_quantity = stock_quantity + $1
+     WHERE id = $2 AND is_active = true
+     RETURNING *`,
+    [delta, id]
   );
   return result.rows[0];
 };
@@ -65,8 +96,10 @@ const deleteProduct = async (id) => {
 module.exports = {
   createProductTable,
   getAllProducts,
+  getAllProductsAdmin,
   getProductById,
   createProduct,
   updateProduct,
+  adjustStock,
   deleteProduct,
 };
